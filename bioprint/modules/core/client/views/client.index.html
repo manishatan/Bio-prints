@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BioPrint">
+<head>
+    <meta charset="UTF-8">
+    <title>Bio Prints</title>
+    <link href="../../../../public/lib/bootstrap.css" rel="stylesheet">
+    <link href=" ../css/core.client.css" rel="stylesheet">
+</head>
+<body ng-controller="displayCtrl">
+<div class="container">
+    <div class="panel-body">
+    <div class="row" >
+            <h3><strong>Bioprint Info </strong></h3>
+        </div>
+    </div>
+     <div  style="overflow-x:auto; overflow-y: auto; height: 530px">
+    <table class="table table-striped table-bordered table-hover text-center">
+        <thead>
+        <tr >
+            <th colspan="3" >Print Data</th>
+            <th colspan="10">Print Info</th>
+            <th colspan="2">User Info</th>
+        </tr>
+        <tr>
+            <th rowspan="2">Dead Percent</th>
+            <th rowspan="2">Elasticity</th>
+            <th rowspan="2">Live Percent</th>
+            <th colspan="3">Cross linking</th>
+            <th colspan="2">Files</th>
+            <th colspan="2">Pressure</th>
+            <th colspan="2">Resolution</th>
+            <th rowspan="2">Well plate</th>
+            <th rowspan="2">Email</th>
+            <th rowspan="2">Serial</th>
+        </tr>
+        <tr>
+            <th>Duration</th>
+            <th>Enabled</th>
+            <th>Intensity</th>
+            <th>Input</th>
+            <th>Output</th>
+            <th>Extruder 1</th>
+            <th>Extruder 2</th>
+            <th>Layer Height</th>
+            <th>Layer Number</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="print in prints  track by $index"  ng-init='values=traverse_it(print)'>
+            <td ng-repeat="val in values  track by $index ">{{val}}</td>
+        </tr>
+        </tbody>
+    </table>
+     </div>
+    </div>
+    </div>
+<!--Vendor Dependencies-->
+<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.js"></script>-->
+<script src="../../../../public/lib/angular.js"></script>
+<script src="../../../../public/lib/jquery-1.12.3.js"></script>
+
+<!--Application Dependencies-->
+<script src="../../../../data.json"></script>
+<script src="../client.config.js"></script>
+<script src="../controller/core.controller.client.js"></script>
+</body>
+</html>

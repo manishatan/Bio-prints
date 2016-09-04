@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+    border: 2px solid lightgrey;
+}
+
+table, td, th {
+    border: 1px solid black;
+    text-align: center;
+}
+thead th {
+    height: 30px;
+    vertical-align: middle;
+    font-family: Arial;
+    color:#122b40;
+   }
+tbody {
+    height: 370px;
+    overflow-y: auto;
+}
